@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-import {MyElement} from '../my-element.js';
+import {GftDemoHelper} from '../gft-demo-helper.js';
 import {fixture, html} from '@open-wc/testing';
 
 const assert = chai.assert;
@@ -12,7 +12,7 @@ const assert = chai.assert;
 suite('my-element', () => {
   test('is defined', () => {
     const el = document.createElement('my-element');
-    assert.instanceOf(el, MyElement);
+    assert.instanceOf(el, GftDemoHelper);
   });
 
   test('renders with default values', async () => {

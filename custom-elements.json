@@ -2,37 +2,71 @@
   "version": "experimental",
   "tags": [
     {
-      "name": "my-element",
-      "path": "./my-element.js",
+      "name": "gft-demo-helper",
+      "path": "./gft-demo-helper.js",
       "description": "An example element.",
       "attributes": [
         {
-          "name": "name",
+          "name": "src",
           "description": "The name to say \"Hello\" to.",
           "type": "string",
-          "default": "\"World\""
+          "default": "\"undefined\""
         },
         {
-          "name": "count",
-          "description": "The number of times the button has been clicked.",
-          "type": "number",
-          "default": "0"
+          "name": "title",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "subtitle",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "defaultBreakPoints",
+          "type": "object",
+          "default": "[{\"width\":1360,\"name\":\"LARGE\",\"isSelected\":false,\"textName\":\"Desktop\"},{\"width\":768,\"name\":\"MEDIUM\",\"isSelected\":false,\"textName\":\"Tablet\"},{\"width\":320,\"name\":\"SMALL\",\"isSelected\":true,\"textName\":\"Mobile\"}]"
         }
       ],
       "properties": [
         {
-          "name": "name",
-          "attribute": "name",
+          "name": "getBreakpointsTpl",
+          "type": "TemplateResult<1>"
+        },
+        {
+          "name": "src",
+          "attribute": "src",
           "description": "The name to say \"Hello\" to.",
           "type": "string",
-          "default": "\"World\""
+          "default": "\"undefined\""
         },
         {
           "name": "count",
-          "attribute": "count",
-          "description": "The number of times the button has been clicked.",
           "type": "number",
           "default": "0"
+        },
+        {
+          "name": "title",
+          "attribute": "title",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "subtitle",
+          "attribute": "subtitle",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "defaultBreakPoints",
+          "attribute": "defaultBreakPoints",
+          "type": "object",
+          "default": "[{\"width\":1360,\"name\":\"LARGE\",\"isSelected\":false,\"textName\":\"Desktop\"},{\"width\":768,\"name\":\"MEDIUM\",\"isSelected\":false,\"textName\":\"Tablet\"},{\"width\":320,\"name\":\"SMALL\",\"isSelected\":true,\"textName\":\"Mobile\"}]"
+        },
+        {
+          "name": "classes",
+          "type": "object",
+          "default": "{\"small\":true,\"medium\":false,\"large\":false}"
         },
         {
           "name": "renderRoot",
@@ -51,6 +85,12 @@
           "name": "updateComplete",
           "description": "Returns a Promise that resolves when the element has completed updating.\nThe Promise value is a boolean that is `true` if the element completed the\nupdate without triggering another update. The Promise result is `false` if\na property was set inside `updated()`. If the Promise is rejected, an\nexception was thrown during the update.\n\nTo await additional asynchronous work, override the `getUpdateComplete`\nmethod. For example, it is sometimes useful to await a rendered element\nbefore fulfilling this Promise. To do this, first await\n`super.getUpdateComplete()`, then any subsequent state.",
           "type": "Promise<boolean>"
+        }
+      ],
+      "events": [
+        {
+          "name": "iframe-loaded",
+          "description": "Fired when iframe load event is set"
         }
       ],
       "slots": [
